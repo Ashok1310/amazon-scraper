@@ -1,0 +1,24 @@
+Amazon Web Scraper
+The Amazon Web Scraper is a Python application that allows you to scrape data from Amazon's website. It uses the uvicorn and celery libraries to retrieve product information.
+
+Installation
+1. Clone the repository to your local machine.
+2. Install the required Python packages by running pip install -r requirements.txt.
+
+
+Usage
+To start the web scraper, run the following command:
+uvicorn main:app --reload
+
+This will start the server and allow you to send HTTP requests to the endpoints provided by the application.
+
+To start the celery worker, run the following command:
+
+For windows os
+celery -A tasks.celery_app worker -l info -P gevent
+
+For linux based os 
+celery -A tasks.celery_app worker -l info -P
+
+This will start the worker and allow it to process tasks in the background.
+
